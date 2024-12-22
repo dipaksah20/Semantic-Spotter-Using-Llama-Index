@@ -39,9 +39,12 @@ Example Use Cases:
 
 ## System Design
 
+Below system design is used in the solution. 
+
 ![](./image/Rag-Wars-Langchain-vs-Llama-Index-flow.png)
 
 -  **Data Loading**: SimpleDirectoryReader loads documents (including PDFs) from a directory. No explicit PyPDFLoader is needed, as Llama Index handles it internally.
+-  **Parsing**: SimpleNodeParser creates chunks or nodes for given documents. Here, chunk_size = 1024, chunk_overlap = 128 are used in this solution development. 
 -  **Indexing**: VectorStoreIndex creates the vector index. The service context is initialized with the LLM and embedding model.
 -  **Storage**: StorageContext manages index persistence. The example shows how to load and save the index to disk, effectively providing caching.
 -  **Querying**: RetrieverQueryEngine() creates a query engine. 
@@ -54,7 +57,7 @@ Example Use Cases:
 
 ## Tech Stack
 - **Language**: Python-In Jupyter Notebook
-- **Frameworks/Libraries**: Transformers, PyPDF, Llama-Index, Disk Cache
+- **Frameworks/Libraries**: Transformers, HuggingFace, Llama-Index, Disk Cache
 - **APIs/Models**: OpenAI's GPT-3.5 
 - **Tools used**: Jupyter Notebook
 
@@ -65,15 +68,17 @@ Example Use Cases:
 ### Prerequisites
 Ensure you have the following installed:
 - Python Latest version
+- Llama-Index libraries
+- HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
 
 ### Installation
 1. Clone the repo:
 git clone https://github.com/dipaksah20/Semantic-Spotter-Using-Llama-Index/tree/main
 
-2. Run the main file from Jupyter environment:
-"Semantic_spotter_lamaindex_Sandeep.ipynb"
+2. Run the Jupyter:
+"Semantic_Spotter_LlamaIndex_V6.ipynb"
 
-- Please note: OpenAI API keys are required for the project to function. You can obtain them from the OpenAI website and change the same in the code. We have updated the code and added more models to make it more dynamic in V2 of the project.
+- Please note: OpenAI API keys are required for the project to function. You can obtain them from the OpenAI website and change the same in the code. We have updated the code and added more models to make it more dynamic.
 
 ---
 
