@@ -92,9 +92,9 @@ No documentation will be made available for this project since this project only
 
 ## Challenges/Issues Faced with fixes
 
-- [Issue #1](Cache layer was added to prevent re-embedding of the data. This was done to  make the retrieval process more efficient.)
+- Cache layer was added to improve the performance and efficiency of systems by storing frequently accessed data in a readily available location. This was done to make the retrieval process more efficient.
 
-- [Issue #2](Vector index generation was stored in the local storage to avoid regeneration and stored vector index is used everytime we ran the solution.)
+- Vector index generation was stored in the local storage to avoid regeneration and stored vector index is used every time we ran the solution.
 
 ---
 
